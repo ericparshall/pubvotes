@@ -12,9 +12,11 @@
     "sass": "^1.69.5"
   },
   "scripts": {
-    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
-    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "build:css:compile:app": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:prefix:app": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css:compile:pub": "sass ./app/assets/stylesheets/public.bootstrap.scss:./app/assets/builds/public.css --no-source-map --load-path=node_modules",
+    "build:css:prefix:pub": "postcss ./app/assets/builds/public.css --use=autoprefixer --output=./app/assets/builds/public.css",
+    "build:css": "yarn build:css:compile:app && yarn build:css:compile:pub && yarn build:css:prefix:app && yarn build:css:prefix:pub",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
   "browserslist": [

@@ -12,6 +12,7 @@ nvm use 21.4.0
 gem install rails
 npm install -g yarn
 rails new pubvotes --database=postgresql --css=bootstrap
+bin/importmap pin bootstrap
 ```
 
 Things you may want to cover:
